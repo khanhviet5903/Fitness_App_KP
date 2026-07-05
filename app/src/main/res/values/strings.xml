@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Fitness_App_KP</string>
+    <string name="start">START</string>
+    <string name="cover_image">cover image</string>
+    <string name="bmi">BMI</string>
+    <string name="calculator">Calculator</string>
+    <string name="get_ready_for">GET READY FOR</string>
+    <string name="upcoming_exercise">UPCOMING EXERCISE:</string>
+    <string name="exercise_name">Exercise Name</string>
+    <string name="exercise_image">exercise image</string>
+</resources>
