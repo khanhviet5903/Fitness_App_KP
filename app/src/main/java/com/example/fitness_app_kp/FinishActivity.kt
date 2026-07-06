@@ -1,4 +1,4 @@
-package learning.self.kotlin.a7minuteworkout
+package com.example.fitness_app_kp.
 
 import android.database.sqlite.SQLiteOpenHelper
 import androidx.appcompat.app.AppCompatActivity
@@ -17,7 +17,7 @@ class FinishActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar_finish_activity)
         val actionBar = supportActionBar
-        if(actionBar != null){
+        if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true)//set back button
         }
 
@@ -27,20 +27,9 @@ class FinishActivity : AppCompatActivity() {
         }
 
 
-        finish_btn.setOnClickListener{
+        finish_btn.setOnClickListener {
             finish() // finish this activity and go back to main activity
         }
 
-        addDateToDB()
-    }
-
-    private fun addDateToDB(){
-        val calendar = Calendar.getInstance()
-        val dateTime = calendar.time
-        val sdf = SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault())
-        val date = sdf.format(dateTime)
-
-        val dbHandler = SQLiteOpenHelper(this, null)
-        dbHandler.addDate(date)
     }
 }

@@ -7,8 +7,10 @@ import android.content.Intent
 import android.widget.LinearLayout
 import androidx.compose.ui.tooling.preview.Preview
 
-
-
+import com.example.fitness_app_kp.exercise.ExerciseActivity
+import com.example.fitness_app_kp.BMIActivity
+import com.example.fitness_app_kp.databinding.ActivityBmiBinding
+import com.example.fitness_app_kp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,12 +18,15 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        start_ll.setOnClickListener {
+        var binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.startLl.setOnClickListener {
             val intent = Intent(this, ExerciseActivity::class.java)
             startActivity(intent)
         }
 
-        bmi_ll.setOnClickListener {
+        binding.bmiLl.setOnClickListener {
             val intent = Intent(this, BMIActivity::class.java)
             startActivity(intent)
         }

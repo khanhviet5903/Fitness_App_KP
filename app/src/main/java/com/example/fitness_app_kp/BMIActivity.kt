@@ -1,16 +1,18 @@
-package learning.self.kotlin.a7minuteworkout
+package com.example.fitness_app_kp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.example.fitness_app_kp.R
+import com.example.fitness_app_kp.databinding.ActivityBmiBinding
 import kotlinx.android.synthetic.main.activity_bmi.*
 import java.math.BigDecimal
 import java.math.RoundingMode
 
 class BMIActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityBmiBinding
     val METRIC_UNITS_VIEW = "METRIC_UNIT_VIEW"
     val US_UNITS_VIEW = "US_UNIT_VIEW"
 
@@ -20,17 +22,22 @@ class BMIActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bmi)
 
-        setSupportActionBar(toolbar_bmi_activity)
+        binding = ActivityBmiBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        setSupportActionBar(binding.toolbarBmiActivity)
+
+        setSupportActionBar(binding.toolbarBmiActivity)
         val actionBar = supportActionBar
         if(actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true) //set back button
         }
         // set back button action
-        toolbar_bmi_activity.setNavigationOnClickListener {
+        binding.toolbarBmiActivity.setNavigationOnClickListener {
             onBackPressed()
         }
 
-        calculate_units_btn.setOnClickListener {
+        binding.calculateUnitsBtn.setOnClickListener {
             if(currentVisibleView.equals(METRIC_UNITS_VIEW)) {
                 if (validateMetricUnits()) {
                     val heightValue: Float = metric_unit_height_et.text.toString().toFloat() / 100 // convert to meters
