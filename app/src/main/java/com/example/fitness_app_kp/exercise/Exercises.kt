@@ -1,5 +1,7 @@
 package com.example.fitness_app_kp.exercise
 
+import com.example.fitness_app_kp.R
+
 class Exercises {
     companion object{
         fun defaultExerciseList():ArrayList<ExerciseModel>{
@@ -14,7 +16,7 @@ class Exercises {
 
             val lunge = ExerciseModel(2,
                 "Lunge",
-                R.drawable.lunge
+                R.drawable.lunge,
                 false,
                 false)
             exercisesList.add(lunge)

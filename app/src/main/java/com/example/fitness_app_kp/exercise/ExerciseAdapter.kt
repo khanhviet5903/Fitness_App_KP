@@ -1,12 +1,13 @@
 package com.example.fitness_app_kp.exercise
 
 import android.graphics.Color
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.fitness_app_kp.R
+import com.google.ai.client.generativeai.common.shared.Content
 import kotlinx.android.synthetic.main.item_exercise_status.view.*
 
 
@@ -20,7 +21,8 @@ class ExerciseAdapter(val times: ArrayList<ExerciseModel>,
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater
             .from(context)
-            .inflate(R.layout.item_exercise_status,
+            .inflate(
+                R.layout.item_exercise_status,
                 parent,
                 false))
     }

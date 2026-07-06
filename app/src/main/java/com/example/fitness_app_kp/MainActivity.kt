@@ -1,15 +1,16 @@
 package com.example.fitness_app_kp
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
+import androidx.appcompat.app.AppCompatActivity
 import androidx.activity.enableEdgeToEdge
 import android.content.Intent
 import android.widget.LinearLayout
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.fitness_app_kp.ui.theme.Fitness_App_KPTheme
 
 
-class MainActivity : ComponentActivity() {
+
+
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -25,4 +26,5 @@ class MainActivity : ComponentActivity() {
             startActivity(intent)
         }
     }
+
 }
