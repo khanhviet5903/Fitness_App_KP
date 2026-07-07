@@ -1,9 +1,9 @@
-package com.example.fitness_app_kp.
+package com.example.fitness_app_kp
 
 import android.database.sqlite.SQLiteOpenHelper
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_finish.*
+import com.example.fitness_app_kp.databinding.ActivityFinishBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -13,21 +13,22 @@ class FinishActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_finish)
+        var binding = ActivityFinishBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        setSupportActionBar(toolbar_finish_activity)
+        setSupportActionBar(binding.toolbarFinishActivity)
         val actionBar = supportActionBar
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true)//set back button
         }
 
         //set the back btn on toolbar
-        toolbar_finish_activity.setNavigationOnClickListener {
-            onBackPressed() //go back to main activity, because I finished the exercise activity
+       binding.toolbarFinishActivity.setNavigationOnClickListener {
+            onBackPressedDispatcher.onBackPressed() //go back to main activity, because I finished the exercise activity
         }
 
 
-        finish_btn.setOnClickListener {
+        binding.finishBtn.setOnClickListener {
             finish() // finish this activity and go back to main activity
         }
 

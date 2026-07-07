@@ -8,6 +8,8 @@ import android.os.CountDownTimer
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
+import android.widget.Button
+import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fitness_app_kp.R
@@ -47,6 +49,9 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.toolbarExerciseActivity.setNavigationOnClickListener {
+            customDialogForBackButton()
+        }
+        onBackPressedDispatcher.addCallback(this) {
             customDialogForBackButton()
         }
 
@@ -233,9 +238,6 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         super.onDestroy()
     }
 
-    override fun onBackPressed() {
-        customDialogForBackButton()
-    }
 
     private fun customDialogForBackButton() {
 
@@ -243,12 +245,14 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         dialog.setContentView(R.layout.dialog_custom_back_confirmation)
 
-        dialog.yes_btn.setOnClickListener {
+        val yesButton = dialog.findViewById<Button>(R.id.yes_btn)
+        val noButton = dialog.findViewById<Button>(R.id.no_btn)
+
+        yesButton.setOnClickListener{
             dialog.dismiss()
             finish()
         }
-
-        dialog.no_btn.setOnClickListener {
+        noButton.setOnClickListener(){
             dialog.dismiss()
         }
 

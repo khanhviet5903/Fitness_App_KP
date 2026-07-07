@@ -23,6 +23,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".BMIActivity"
+            android:exported="false"
+            android:label="BMI Calculator"
+            android:theme="@style/Theme.Fitness_App_KP" />
+        <activity
+            android:name=".exercise.ExerciseActivity"
+            android:exported="false"
+            android:label="Exercise"
+            android:theme="@style/Theme.Fitness_App_KP" />
+        <activity
+            android:name=".FinishActivity"
+            android:exported="false"
+            android:label="Finish"
+            android:theme="@style/Theme.Fitness_App_KP" />
     </application>
 
 </manifest>

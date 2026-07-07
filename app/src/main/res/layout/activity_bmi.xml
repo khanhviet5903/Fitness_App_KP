@@ -34,7 +34,7 @@
             android:gravity="center"
             android:textSize="16dp"
             android:textStyle="bold"
-            android:textColor="@drawable/units_tab_text_color_selector"
+            android:textColor="@color/units_tab_text_color_selector"
             android:button="@null"
             android:background="@drawable/units_tab_selector"
             android:id="@+id/metric_unit_rb"/>
@@ -48,7 +48,7 @@
             android:gravity="center"
             android:textSize="16dp"
             android:textStyle="bold"
-            android:textColor="@drawable/units_tab_text_color_selector"
+            android:textColor="@color/units_tab_text_color_selector"
             android:button="@null"
             android:background="@drawable/units_tab_selector"
             android:id="@+id/us_unit_rb"/>
